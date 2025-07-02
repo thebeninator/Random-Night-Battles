@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using GHPC.World;
 using MelonLoader;
 using RandomNightBattles;
@@ -10,7 +6,7 @@ using UnityEngine;
 using GHPC.State;
 using System.Collections;
 
-[assembly: MelonInfo(typeof(RandomNightBattlesMod), "Random Night Battles", "1.0.0", "ATLAS")]
+[assembly: MelonInfo(typeof(RandomNightBattlesMod), "Random Night Battles", "1.0.1", "ATLAS")]
 [assembly: MelonGame("Radian Simulations LLC", "GHPC")]
 
 namespace RandomNightBattles
@@ -28,7 +24,7 @@ namespace RandomNightBattles
 
         public override void OnSceneWasInitialized(int buildIndex, string sceneName)
         {
-            if (sceneName == "MainMenu2_Scene" || sceneName == "LOADER_MENU" || sceneName == "LOADER_INITIAL" || sceneName == "t64_menu") return;
+            if (Util.menu_screens.Contains(sceneName)) return;
 
             StateController.RunOrDefer(GameState.GameReady, new GameStateEventHandler(ChangeToNight), GameStatePriority.Lowest);
         }

@@ -10,6 +10,14 @@ namespace RandomNightBattles
 {
     public class Util
     {
+        public static string[] menu_screens = new string[] {
+            "MainMenu2_Scene",
+            "MainMenu2-1_Scene",
+            "LOADER_MENU",
+            "LOADER_INITIAL",
+            "t64_menu"
+        };
+
         public static void ShallowCopy(System.Object dest, System.Object src)
         {
             BindingFlags flags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
